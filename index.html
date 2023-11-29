@@ -4,6 +4,19 @@
         <title>Creatures - JS Data Attributes Example</title>
 
         <style>
+            html{
+                background-color:lightpink
+            }
+            body{
+                background-color: mistyrose;
+            }
+
+            h1{
+                text-align: center;
+            }
+            h3{
+                text-align:center;
+            }
             
             div.creature{
                 padding:5px;
@@ -12,11 +25,12 @@
                 max-width:400px;
                 min-height:100px;
                 margin-bottom:5px;
+                
             }
             
             div.creature img{
                 max-width:200px;
-                float:right;
+                float:left
     
             }
 
@@ -35,17 +49,17 @@
     </p> 
     <div>
         <ul>
-            <li>land: green</li>
-            <li>water: blue</li>
-            <li>air: yellow</li>
+            <li>Land: Green</li>
+            <li>Water: Blue</li>
+            <li>Air: Yellow</li>
         </ul>
     </div>
 
     <p>When you click <b>Show Creature Type</b>, the border color and style will changed based on the type of creature:</p>
     <div> 
         <ul>
-            <li>animal: soli red</li>
-            <li>bug: dashed orange</li>
+            <li>Animal: Solid Red</li>
+            <li>Bug: Dashed Orange</li>
         </ul>
     </div>
     <div class="creature" data-home="land" data-creature-type="animal">    
@@ -109,7 +123,7 @@
                             myNodeList[x].style.backgroundColor= "green";
                         break; 
                         case "water":
-                            myNodeList[x].style.backgroundColor= "blue";
+                            myNodeList[x].style.backgroundColor= "lightblue";
                         break; 
                         case "air":
                             myNodeList[x].style.backgroundColor= "yellow";
@@ -145,15 +159,12 @@
 
         function clearAll()
         {
-            /*
-                loop through all creatures
-                
-                clear border back to 1px solid black
-                clear background color to white
-                
-            */
-            alert("clearAll()");
-        }//end clearAll()
+            const myNodeList = document.querySelectorAll("div.creature");
+            myNodeList.forEach(function(el){
+                el.style.backgroundColor = "#fff"
+                el.style.border = "1px solid #000"
+            });
+        }
 
     </script>    
     </body>
